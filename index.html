@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grading</title>
+</head>
+
+<script>
+const p1 = {firstName: "John", lastName: "Doe", grade: 9, gpa: 3.9, graduate: true}
+const p2 = {firstName: "Megan", lastName: "Smith", grade: 10, gpa: 2.2, graduate: true}
+const p3 = {firstName: "Kevin", lastName: "Chen", grade: 9, gpa: 3.9, graduate: true}
+const p4 = {firstName: "Lucas", lastName: "Kim", grade: 11, gpa: 3.2, graduate: true}
+const p5 = {firstName: "Kelly", lastName: "Williams", grade: 12, gpa: 3.0, graduate: true}
+const p6 = {firstName: "Margaret", lastName: "Mouse", grade: 11, gpa: 2.1, graduate: true}
+const p7 = {firstName: "Chloe", lastName: "He", grade: 11, gpa: 3.1, graduate: true}
+const p8 = {firstName: "Chris", lastName: "Li", grade: 10, gpa: 1.2, graduate: true}
+const p9 = {firstName: "Stella", lastName: "Su", grade: 9, gpa: 2.9, graduate: true}
+const p10 = {firstName: "Steven", lastName: "Steel", grade: 12, gpa: 1.1, graduate: true}
+
+
+function show() {
+        for(let i = 1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "block";
+        document.getElementById("s"+i+ "d").style.display = "none";
+        document.getElementById("h2").style.display = "block";
+        document.getElementById("p").style.display = "block";
+
+    }
+}
+function display(x) {
+
+    document.getElementById("h2").style.display = 'none';
+    document.getElementById("p").style.display = 'none';
+
+
+
+function showAll() {
+    for(let i = 1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "block";
+    }
+}
+    if (x === 1) {
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p1;
+        const info = document.getElementById("s1d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+      `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+    }
+
+    if (x ===2 ) {
+
+        for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p2;
+        const info = document.getElementById("s2d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+    }
+
+
+    if (x === 3) {
+        for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p3;
+        const info = document.getElementById("s3d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+    }
+    if (x===4) {
+        for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p4;
+        const info = document.getElementById("s4d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+            <input type="button" value="Return" onclick="show()">
+
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+    }
+    if (x===5) {
+        for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p5;
+    const info = document.getElementById("s5d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+        <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+    }
+    if (x===6) {
+        for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p6;
+        const info = document.getElementById("s6d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+
+            <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+    }
+    if (x===7) {
+        for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+        const student = p7;
+    const info = document.getElementById("s7d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+            <input type="button" value="Return" onclick="show()">
+
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+}
+if (x===8) {
+    for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+    const student = p8;
+    const info = document.getElementById("s8d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+        <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+
+        <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+}
+if (x===9) {
+    for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+    const student = p9;
+    const info = document.getElementById("s9d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+
+            <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+}
+if (x===10) {
+    for (let i = x-1; i !=0; i--) {
+            document.getElementById("s"+i).style.display = "none";
+
+        }
+        for(let i = x+1; i <= 10; i++){
+        document.getElementById("s"+i).style.display = "none";
+    }
+    const student = p10; 
+    const info = document.getElementById("s10d");
+        info.style.display = "block";
+        info.innerHTML = `
+    <p>Name: ${student.firstName} ${student.lastName}</p>
+    <p>Grade: ${student.grade}</p>
+    <p>GPA: ${student.gpa}</p>
+    <p>Gradute: ${student.graduate}</p>
+    <form>
+        <label for="newGPA">Enter new GPA:</label>
+        <input type="text" id="newGPA" name="newGPA">
+        <br>
+        <label for="graduateStatus">Graduate:</label>
+        <input type="checkbox" id="graduateStatus" name="graduateStatus">
+        <br>
+        <input type="button" value="Submit Changes">
+    </form>
+    <input type="button" value="Return" onclick="show()">
+
+  `;
+  const submitBtn = document.querySelector("input[value='Submit Changes']");
+submitBtn.addEventListener("click", function() {
+    const newGPA = document.getElementById("newGPA").value;
+    const graduateStatus = document.getElementById("graduateStatus").checked;
+    if (newGPA >= 0 && newGPA <= 4) {
+        student.gpa = newGPA;
+        student.graduate = graduateStatus;
+        info.innerHTML = `
+        <p>Name: ${student.firstName} ${student.lastName}</p>
+        <p>Grade: ${student.grade}</p>
+        <p>GPA: ${student.gpa}</p>
+        <p>Gradute: ${student.graduate}</p>
+        <form>
+            <label for="newGPA">Enter new GPA:</label>
+            <input type="text" id="newGPA" name="newGPA">
+            <br>
+            <label for="graduateStatus">Graduate:</label>
+            <input type="checkbox" id="graduateStatus" name="graduateStatus">
+            <br>
+            <input type="button" value="Submit Changes">
+        </form>
+        <input type="button" value="Return" onclick="show()">
+            <p> Click on the students name again to make further changes. </p>
+
+      `;
+    } else {
+        alert("Please enter a valid GPA between 0-4.");
+    }
+});
+
+}
+}
+
+
+
+
+    </script>
+
+
+
+
+    <style>
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+        #buttons {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh; 
+ }
+  button {
+
+    width: 80px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+h2 {
+ text-align: center;   
+}
+p{
+    text-align: center;
+}
+
+#s1d, #s2d, #s3d, #s4d, #s5d, #s6d, #s7d, #s8d, #s9d, #s10d {
+display: none;
+overflow: auto;
+height: 300px;
+width: 50%;
+margin: 0 auto;
+}
+        </style>
+<body>
+
+    <h1>Grading Simulator</h1>
+    <h2 id = "h2">You can be a teacher for a day! </h2>
+    <p id = "p"> Begin by clicking a name below </p>
+
+    <div id="buttons">
+    <button id = "s1" onclick = display(1) > John </button>
+    <div id = "s1d"></div>
+    <button id = "s2" onclick = display(2)> Megan</button>
+    <div  id = "s2d"></div>
+    <button id = "s3" onclick = display(3)> Kevin</button>
+    <div  id = "s3d"></div>
+
+    <button id = "s4" onclick = display(4)> Lucas</button>
+    <div  id = "s4d"></div>
+
+    <button id = "s5" onclick = display(5)> Kelly</button>
+    <div  id = "s5d"></div>
+
+    <button id = "s6" onclick = display(6)> Margaret</button>
+    <div  id = "s6d"></div>
+
+    <button id = "s7" onclick = display(7)> Chloe</button>
+    <div  id = "s7d"></div>
+
+    <button id = "s8" onclick = display(8)> Chris</button>
+    <div  id = "s8d"></div>
+
+    <button id = "s9" onclick = display(9)> Stella</button>
+    <div  id = "s9d"></div>
+
+    <button id = "s10" onclick = display(10)>Steven</button>
+    <div id = "s10d"></div>
+
+</div>
+
+
+
+
+    
+</body>
+</html>
